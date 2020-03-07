@@ -11,6 +11,18 @@
   .mySlides {
     display: none;
   }
+/*zoom hover*/
+.mySlides img{
+    transition: transform 2s ease;
+}
+.mySlides:hover img{
+    transition: transform 2s ease;
+    transform: scale(1.2);
+}
+.mySlides:active img{
+    transition: transform 2s ease;
+    transform: scale(2.5);
+}
   
   /* Add a pointer when hovering over the thumbnail images */
   .cursor {
@@ -84,6 +96,4 @@
   .demo:hover {
     opacity: 1;
   }
-  .numbertext img{
-      width: 100%;
-  }
+ 

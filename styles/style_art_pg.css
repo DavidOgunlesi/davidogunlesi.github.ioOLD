@@ -12,9 +12,6 @@ body{
        /* The image used */
   background-image: url('../img/art_main_bg.jpg');
 
-  /* Full height */
-  height: 100%; 
-
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -22,7 +19,7 @@ body{
   background-size: cover;
 }
 body, html {
-    height: 100%;
+    height: 80%;
   }
   
 header{
@@ -193,34 +190,58 @@ main{
     box-shadow: 20px 30px 16px 15px rgba(0,0,0,0.5);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+@media only screen and (max-width: 830px) {
+
+    .image-container-3 {
+        height: 200px;
+    }
+}
 @media only screen and (min-width: 831px) {
     main{
-        margin:200px;
+        margin: 200px 200px;
+    }
+    .image-container-3 {
+        height: 350px;
     }
 }
 @media only screen and (min-width: 1050px) {
     main{
-        margin:300px;
+        margin: 200px 300px;
+    }
+    .image-container-3 {
+        height: 400px;
     }
 }
 @media only screen and (min-width: 1250px) {
     main{
-        margin:400px;
+        margin: 200px 400px;
+    }
+    .image-container-3 {
+        height: 450px;
     }
 }
 @media only screen and (min-width: 1457px) {
     main{
-        margin:500px;
+        margin: 200px 500px;
+    }
+    .image-container-3 {
+        height: 500px;
     }
 }
 @media only screen and (min-width: 1651px) {
     main{
-        margin:600px;
+        margin: 200px 600px;
+    }
+    .image-container-3 {
+        height: 550px;
     }
 }
 @media only screen and (min-width: 1854px) {
     main{
-        margin:670px;
+        margin: 200px 670px;
+    }
+    .image-container-3 {
+        height: 600px;
     }
 }
 .main-bg{
@@ -264,11 +285,28 @@ main{
 }
 
 .image-container {
-    background-image: url("../img/space_img_star.jpeg"); /* The image used - important! */
-    background-size: cover;
+    background-image: url("../img/gallery/mandelbulbfinal.png"); /* The image used - important! */
+    background-size: 100%;
+    background-position: 0;
     background-repeat: no-repeat;
     position: relative; /* Needed to position the cutout text in the middle of the image */
     height: 300px; /* Some height */
+}
+.image-container-3 {
+    background-image: url("../img/gallery/simmyJOJO_temp.jpg"); /* The image used - important! */
+    background-size:170%;
+    background-position: 0;
+    background-repeat: no-repeat;
+    position: relative; /* Needed to position the cutout text in the middle of the image */ /* Some height */
+}
+.image-container-3 .text { 
+    background-color: rgb(114, 230, 91);
+    mix-blend-mode: normal; 
+    font-size: 6vw;
+    left: 20%;
+    top: 120px;
+    padding: 1px;
+    width: 40%;
 }
 
 .image-container-2 { /* The image used - important! */
@@ -300,6 +338,9 @@ main{
 .boxed-image{
     width: 100%;
     height: 100%;
+}
+.insta-iframe{
+    background-color: white;
 }
 .logo{
     float: left;

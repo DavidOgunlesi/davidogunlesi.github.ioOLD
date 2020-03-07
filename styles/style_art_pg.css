@@ -315,6 +315,24 @@ main{
     background-repeat: no-repeat;
     position: relative; /* Needed to position the cutout text in the middle of the image */ /* Some height */
 }
+.image-container-4 {
+    background-image: url("../img/gallery/apollorendercomplete.png"); /* The image used - important! */
+    background-size: cover;
+    background-position: 0;
+    background-repeat: no-repeat;
+    position: relative; /* Needed to position the cutout text in the middle of the image */
+    height: 300px; /* Some height */
+}
+.image-container-4 .text {
+    background-color: rgb(188, 199, 36);
+    mix-blend-mode: normal; 
+    font-size: 6vw;
+    left: 76%;
+    top: 230px;
+    padding: 1px;
+    width: 40%;
+}
+
 .image-container-3 .text { 
     background-color: rgb(114, 230, 91);
     mix-blend-mode: normal; 
@@ -357,6 +375,24 @@ main{
 }
 .insta-iframe{
     background-color: white;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+         /* The image used */
+  background-image: url('../img/gallery/PLANET.png');
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    padding: 10px;
+  }
+.grid-item {
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
 }
 .logo{
     float: left;

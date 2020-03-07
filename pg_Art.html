@@ -39,6 +39,12 @@
             </nav>
         </header>
     </div>
+    <div class="nav-2"style=" top: 60px;" onclick="scrollWinToGallery()">
+        <div>GALLERY</div>
+    </div><br>
+    <div class="nav-2" style=" top: 140px;"  onclick="scrollWinToInsta()">
+        <div >INSTAGRAM</div>
+    </div>
     <!--Main Content-->
     <div class = "billboard"></div>
             <div class="image-container">
@@ -47,7 +53,7 @@
     <div class = "blackbar"></div>
     <div class = "billboard2">
         <div class="image-container-2">
-            <div class="text">Gallery</div>
+            <div id="GALLERY" class="text">Gallery</div>
         </div>
     </div>
     <div class = "blackbar"></div>
@@ -209,6 +215,7 @@
         <div class = "blackbar"></div>
         <div class="image-container-3">
             <div class="text">INSTAGRAM</div>
+            <div id="INSTA"></div>
         </div>
         <div class = "insta-iframe">
         <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/663d585284d851038b27abdbbaf1d12c.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
@@ -232,6 +239,9 @@
 </body>
 
 <script>
+/*/////////////////////////////////////////////////////////////////////////////*/
+/*CHECK SCROLL AND RETURN*/
+/*/////////////////////////////////////////////////////////////////////////////*/
  // The debounce function receives our function as a parameter
 const debounce = (fn) => {
 
@@ -268,9 +278,11 @@ document.addEventListener('scroll', debounce(storeScroll), { passive: true });
 
 // Update scroll position for first time
 storeScroll();
-</script>
 
-<script>
+
+/*/////////////////////////////////////////////////////////////////////////////*/
+/*GALLERY CONTROL*/
+/*/////////////////////////////////////////////////////////////////////////////*/
     var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -300,6 +312,25 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
+}
+/*/////////////////////////////////////////////////////////////////////////////*/
+/*SCROLL TO POSITION*/
+/*/////////////////////////////////////////////////////////////////////////////*/
+var galpos = document.getElementById("GALLERY");/*974*/
+var instapos = document.getElementById("INSTA");/*3585*/
+function scrollWinToGallery() {
+    //window.scrollTo({
+    //top: galpos,
+    //behavior: 'smooth'
+    //});
+    galpos.scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+function scrollWinToInsta() {
+    instapos.scrollIntoView({
+        behavior: 'smooth'
+    });
 }
 </script>
 </html>

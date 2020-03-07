@@ -84,3 +84,6 @@
   .demo:hover {
     opacity: 1;
   }
+  .numbertext img{
+      width: 100%;
+  }

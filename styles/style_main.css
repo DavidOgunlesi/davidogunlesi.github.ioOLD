@@ -1,0 +1,296 @@
+:root{
+    --tp_bar_h: 50px;
+    --tp_bar_color: rgb(0, 0, 0);
+    --main_color: rgba(255, 255, 255, 1);
+    --main_color_bg: transparent;
+    --dropdown_color: rgb(0, 0, 0);
+    --dropdown_opacity: 0;
+}
+body{
+    margin: 0;
+    font-family: Arial;
+       /* The image used */
+  background-image: url('../img/space_img_1.png');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body, html {
+    height: 100%;
+  }
+  
+header{
+    /*background: #111;*/
+    margin: 0;
+    padding: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 0%;
+    z-index: 1;
+}
+.bar{
+    z-index: 1;
+}
+.bar{
+    background-color:transparent;
+    transition: background-color 2s;
+}
+html:not([data-scroll='0']) .bar{
+    background-color:black;
+}
+
+html:not([data-scroll='0']) .drop_a:link,.drop_a:visited{
+    background-color:black;
+}
+
+.bar{
+    z-index: 1;
+}
+
+/*Links*/
+.drop_a:link,.drop_a:visited {
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+}
+.white_a:link,.white_a:visited {
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+}
+.white_a:hover, .white_a:active{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+.current-page{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+/*NAVIGATION TOOLBAR*/
+ul{
+    list-style-type: none;
+}
+
+/*Wide naviagtion fitting (landscape)*/
+@media only screen and (min-width: 600px) {
+    header h1{
+        margin: 0;
+        color: white;
+        float: left;
+        padding: 10px 0 0 0;
+    }
+    .dropdown{
+        display: none;
+    }
+    main{
+        transition: margin 1s;
+        margin: 0px 10%;
+    }
+    .white_a{
+        padding: 5px 10% 5px 10%;
+    }
+    .current-page{
+        border-radius: 5px;
+        transform: skew(-10deg);
+    }
+    .bar{
+        position: fixed;
+        margin: 0;
+        padding: 0 100% 0 0;
+    }
+}
+/*Tall naviagtion fitting (portrait)*/
+@media only screen and (max-width: 600px) {
+    header h1{
+        margin: 0;
+        color: white;
+        padding: 10px 0 0 0;
+    }
+    .navigation ul{
+        display: none;
+    }
+    .dropdown{
+        display: inline-block;
+    }
+    main{
+        transition: margin 1s;
+        margin: 0px 0%;
+    }
+    .white_a, .current-page{
+        padding: 5px 100px 5px 5px;
+    }
+    .bar{
+        position: fixed;
+        margin: 0;
+        padding: 0 100% 0 0;
+    }
+}
+/*Wide bar*/
+.navigation{
+    color: white;
+    /*background: var(--tp_bar_color);*/
+    height: var( --tp_bar_h);
+    white-space: nowrap;
+    border-style: none;
+    padding: 0px 3%;
+}
+.navigation ul{
+    margin: 0px;
+}
+.navigation ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0px 1% 0 1%;
+    padding: 20px 3%;
+    transform: skew(0deg);
+}
+/*Tall bar - dropdown menu*/
+.dropdown{
+    position: fixed;
+    left: 84%;
+    top: 0px;
+    color: white;
+}
+.dropdown-content {
+    transition: right 2s;
+    position: absolute;
+    /*clip-path: inset(5px 60px 10px 40px);*/
+    right: -600px;
+    top: 54px;
+    background-color: var(--dropdown_color);
+    min-width: 160px;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+    padding: 13px 100px 12px 0px;
+    z-index: 1;
+  }
+  
+.dropdown:hover{
+    --dropdown_opacity:1
+}
+.dropdown:hover .dropdown-content {
+    display: inline-block;
+    right: -60px;
+}
+.dropdown .dropdown-content ul {
+    margin:0;
+    padding: 0 0 0 25px;
+}
+.dropdown .dropdown-content ul li.hover,li.active{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+/*Main Content*/
+main{
+    background: var(--main_color);
+    box-shadow: 20px 30px 16px 15px rgba(0,0,0,0.5);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.main-bg{
+    background: var(--main_color_bg);
+}
+.billboard {
+    /* The image used */
+  background-image: url('../img/space_img_2.png');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.billboard2 {
+    /* The image used */
+  background-image: url('../img/code_bg.jpg');
+
+  /* Full height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.col{
+    text-align: center;
+    list-style-type: none;
+    display: inline-block;
+    padding: 11%;
+}
+.blackbar{
+    background-color: black;
+    padding: 25px;
+}
+
+.image-container {
+    background-image: url("../img/space_img_star.jpeg"); /* The image used - important! */
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative; /* Needed to position the cutout text in the middle of the image */
+    height: 300px; /* Some height */
+}
+
+.image-container-2 { /* The image used - important! */
+    background-size: 120%;
+    position: relative; /* Needed to position the cutout text in the middle of the image */
+    height: 300px; /* Some height */
+}
+.image-container-2 .text { 
+    background-color: rgba(255, 255, 255, 0.638);
+    font-size: 19vw;
+    top: 250px;
+}
+.text {
+    background-color: rgb(170, 122, 122);
+    color: black;
+    font-size: 6vw; /* Responsive font size */
+    font-weight: bold;
+    margin: 0 auto; /* Center the text container */
+    padding: 10px;
+    width: 70%;
+    text-align: center; /* Center text */
+    position: absolute; /* Position text */
+    top: 170px; /* Position text in the middle */
+    left: 50%; /* Position text in the middle */
+    transform: translate(-50%, -50%); /* Position text in the middle */
+    mix-blend-mode: screen; /* This makes the cutout text possible */
+}
+
+.boxed-image{
+    width: 100%;
+    height: 100%;
+}
+.logo{
+    float: left;
+}
+.insta-h{
+    margin: -20px 0 0px 50px;
+    padding: 0;
+}
+.email-h{
+    margin: -20px 0 0px 50px;
+    padding: 0;
+    
+}
+footer{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    height: 230px;
+    color: white;
+    background-color: black;
+    padding: 1px;
+}
+.footer-text{
+    margin: 0 0 0 50px;
+}

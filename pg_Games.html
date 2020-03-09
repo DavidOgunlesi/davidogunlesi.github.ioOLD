@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Portfolio, david ogunlesi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href ="styles/style_games_pg.css" rel = "stylesheet" type = "text/css">
+    <title>David Ogunlesi</title>
+</head>
+<body>
+    <div class = "bar">
+        <header>
+            <!--Top Bar Menu-->
+            <nav class = "navigation">
+                <h1>David Ogunlesi</h1>
+                <ul>
+                    <li><a class = "white_a" href = "index.html">HOME</a></li>
+                    <li><div class = "current-page">Games</div></li>
+                    <li><a class = "white_a" href = "pg_Projects.html">PROJECTS</a></li>
+                    <li><a class = "white_a" href = "pg_Art.html">ART</a></li>
+                    <li><a class = "white_a" href = "pg_Blog.html">BLOG</a></li>
+                </ul>
+            </nav>
+        <!--Dropdown Menu-->
+            <nav class = "dropdown">
+                <img src = "img/dropdown_menu_down_arrow.png" alt="dropdown_menu_down_arrow" height="60" width="60"> </img>
+                <div class = "dropdown-content">
+                    <ul>
+                        <hr>
+                        <li><a class = "drop_a" href = "index.html"><div class = "white_a" >HOME</div> </a></li>
+                        <hr>
+                        <li><div class = "current-page">Games</div></li>
+                        <hr>
+                        <li><a class = "drop_a" href = "pg_Projects.html" ><div class = "white_a" >PROJECTS</div></a></li>
+                        <hr>
+                        <li><a class = "drop_a" href = "pg_Art.html" ><div class = "white_a" >ART</div></a></li>
+                        <hr>
+                        <li><a class = "drop_a" href = "pg_Blog.html" ><div class = "white_a" >BLOG</div></a></li>
+                        <hr>
+                    </ul>
+                </div>  
+            </nav>
+        </header>
+    </div>
+    <div class="nav-2"style=" top: 60px;" onclick="scrollWinToUNITY3D()">
+        <div>UNITY3D</div>
+    </div><br>
+    <div class="nav-2" style=" top: 140px;"  onclick="scrollWinToGAMEMAKER()">
+        <div >GAMEMAKER</div>
+    </div>
+    <!--Main Content-->
+    <div class = "billboard"></div>
+            <div class="image-container">
+                <div class="text">GAME PROJECTS</div>
+            </div>
+    <div class = "blackbar"></div>
+    <div class = "billboard2">
+        <div class="image-container-2">
+            <div id="GALLERY" class="text">Gallery</div>
+        </div>
+    </div>
+    <div class = "blackbar"></div>
+
+    <div class="image-container-4">
+        <div class="text">VIDEOS</div>
+        <div id="VIDEOS"></div>
+    </div>
+    <div class = "blackbar"></div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <iframe width="320" height="180"
+            src="https://www.youtube.com/embed/IUtGeh0iOkM">
+            </iframe>
+        </div>
+      </div>
+    <footer>
+        <hr> 
+        <img class="logo" src = "img/instagram_logo.png" alt="instagram_logo" height="40" width="40" sty> <img>
+        <h2 class = "insta-h">INSTAGRAM</h2><br>
+        <div class = "footer-text">
+        @david_ogunlesi<br>
+        @davidogunlesi_art<br>
+        </div>
+        <hr>
+        <img class="logo" src = "img/email_logo.png" alt="email_logoo" height="40" width="40" sty> <img>
+        <h2 class = "email-h">EMAIL</h2><br>
+        <div class = "footer-text">
+        david_ogunlesi@yahoo.co.uk
+        </div>
+    </footer>
+</body>
+
+<script>
+/*/////////////////////////////////////////////////////////////////////////////*/
+/*CHECK SCROLL AND RETURN*/
+/*/////////////////////////////////////////////////////////////////////////////*/
+ // The debounce function receives our function as a parameter
+const debounce = (fn) => {
+
+// This holds the requestAnimationFrame reference, so we can cancel it if we wish
+let frame;
+
+// The debounce function returns a new function that can receive a variable number of arguments
+return (...params) => {
+  
+  // If the frame variable has been defined, clear it now, and queue for next frame
+  if (frame) { 
+    cancelAnimationFrame(frame);
+  }
+
+  // Queue our function call for the next frame
+  frame = requestAnimationFrame(() => {
+    
+    // Call our function and pass any params we received
+    fn(...params);
+  });
+
+} 
+};
+
+
+// Reads out the scroll position and stores it in the data attribute
+// so we can use it in our stylesheets
+const storeScroll = () => {
+document.documentElement.dataset.scroll = window.scrollY;
+}
+
+// Listen for new scroll events, here we debounce our `storeScroll` function
+document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+
+// Update scroll position for first time
+storeScroll();
+
+/*/////////////////////////////////////////////////////////////////////////////*/
+/*SCROLL TO POSITION*/
+/*/////////////////////////////////////////////////////////////////////////////*/
+var galpos = document.getElementById("UNITY3D");/*974*/
+var instapos = document.getElementById("GAMEMAKER");/*3585*/
+function scrollWinToUNITY3D() {
+    galpos.scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+function scrollWinToGAMEMAKER() {
+    instapos.scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+</script>
+</html>

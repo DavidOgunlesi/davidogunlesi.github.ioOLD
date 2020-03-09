@@ -17,6 +17,7 @@
     user-select: none;
   }
 /*zoom hover*/
+@media only screen and (min-width: 600px) {
 .mySlides img{
     transition: transform 2s ease;
 }
@@ -28,7 +29,20 @@
     transition: transform 2s ease;
     transform: scale(2.5);
 }
-  
+@media (pointer:none), (pointer:coarse) {
+  .mySlides img{
+    transition: transform 2s ease;
+}
+.mySlides:hover img{
+    transition: transform 2s ease;
+    transform: scale(1);
+}
+.mySlides:active img{
+    transition: transform 2s ease;
+    transform: scale(1);
+}
+}
+}
   /* Add a pointer when hovering over the thumbnail images */
   .cursor {
     cursor: pointer;
